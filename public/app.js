@@ -17,7 +17,7 @@ var requestComplete = function(){
     var students = JSON.parse(jsonString);
     populateStudentDropDown(students);
     houseCount(students);
-    // pieChart(houseCount);
+    pieChart(students);
 }
 
 var populateStudentDropDown = function (students) {
@@ -78,57 +78,55 @@ var houseCount = function(student){
         
     }
     })
-
 console.log(gryffindor);
 console.log(hufflepuff);
 console.log(ravenclaw);
 console.log(slytherin);
-// return gryffindor;
-// return hufflepuff;
-// return ravenclaw;
-// return slytherin;
+return gryffindor;
+return hufflepuff;
+return ravenclaw;
+return slytherin;
 }
 
-// var pieChart = function(){
-//     var container = document.getElementById('pie-chart');
-//     var chart = new Highcharts.Chart({
-//         chart: {
-//             type: 'pie',
-//             renderTo: container
-//         },
-//         title:{
-//             text: "Houses of Hogwarts by Students"
-//         },
-//         series: [
-//             {
-//                 name: "Houses",
-//                 data: [
-//                     {
-//                         name: "Gryffindor",
-//                         y: gryffindor,
-//                         color: "red"
-//                     },
-//                     {
-//                         name: "Hufflepuff",
-//                         y: hufflepuff,
-//                         color: "yellow",
-//                     }, 
-//                     {
-//                         name: "Ravenclaw",
-//                         y: ravenclaw,
-//                         color: "blue"
-//                     },
-//                      {
-//                         name: "Slytherin",
-//                         y: slytherin,
-//                         color: "green"
-//                     },
-//                 ]
-//         }]
-//     });
-// }
+var pieChart = function(houseCount){
+    var container = document.getElementById('pie-chart');
+    var chart = new Highcharts.Chart({
+        chart: {
+            type: 'pie',
+            renderTo: container
+        },
+        title:{
+            text: "Houses of Hogwarts by Students"
+        },
+        series: [
+            {
+                name: "Houses",
+                data: [
+                    {
+                        name: "Gryffindor",
+                        y: houseCount.gryffindor,
+                        color: "red"
+                    },
+                    {
+                        name: "Hufflepuff",
+                        y: houseCount.hufflepuff,
+                        color: "yellow",
+                    }, 
+                    {
+                        name: "Ravenclaw",
+                        y: houseCount.ravenclaw,
+                        color: "blue"
+                    },
+                     {
+                        name: "Slytherin",
+                        y: houseCount.slytherin,
+                        color: "green"
+                    },
+                ]
+        }]
+    });
+}
 
 
 
 window.addEventListener('load', app);
-
