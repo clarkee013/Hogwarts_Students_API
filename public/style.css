@@ -1,5 +1,7 @@
+/* @import "https://code.highcharts.com/5/css/highcharts.css"; */
+
 body {
-  background-image: url("http://cdn.wallpapersafari.com/85/32/TZtkqg.png");
+  background-image: url("http://wallpapercave.com/wp/MFkDRBW.jpg");
   background-position: center;
 }
 
@@ -7,30 +9,73 @@ h1 {
   font-family: 'Sedgwick Ave Display', cursive;
   font-size: 100px;
   text-align: center;
-  color: #C0392B;
-  border: 5px solid #C0392B;
-  
+  color: red;
+  border: 5px solid antiquewhite;
 }
 
 ul {
   font-family: 'Sedgwick Ave Display', cursive;
   font-size: 20px;
-  text-align: center;
-  color: #C0392B;
-  border: 0.5px solid #C0392B;
-  background-color: #F4D03F;
-  padding: 5px; 
-  margin: 10px;
+  /* text-align: center; */
+  color: red;
+  border: 1px solid red;
+  background-color: antiquewhite;
+  box-shadow: 1px 1px 11px antiquewhite;
+    padding: 10px;  
+   /* padding-right: 30px;  */
+  /* margin: 10px; */
   width: 250px;
+  /* align-content: center; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
 }
+
+ /* .student-list {
+    display: flex;
+    flex-direction: row;
+}  */
 
  .photo {
   text-align: left;
   height: 200px;
-  border: 5px #C0392B;
+  border: 5px red;
 } 
 
+.highcharts-background {
+    fill: antiquewhite;
+}
+
+.highcharts-title {
+    font-family: 'Sedgwick Ave Display', cursive;
+    fill: red;
+}
+
+  #studentDropDown {
+   /* border-top: 10px;
+   padding-top: 10px; */
+     /* overflow:hidden; */
+   width:350px;
+   -moz-border-radius: 9px 9px 9px 9px;
+   -webkit-border-radius: 9px 9px 9px 9px;
+   border-radius: 9px 9px 9px 9px;
+   box-shadow: 1px 1px 11px antiquewhite;
+    background: antiquewhite url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center; 
+   color: red !important;
+   text-overflow: "";
+}  
+
+/* select:focus {
+    background: no-repeat 0 -35px;
+} */
+
+/* #option { */
+    /* display: inline-flex;
+    position: center; */
+    /* text-align: center; */
+/* } */
+
 div {
-    text-align: right;
-    background-color: yellow;
+   text-align: center;
 }

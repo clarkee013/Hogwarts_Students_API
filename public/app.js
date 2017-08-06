@@ -16,8 +16,8 @@ var requestComplete = function(){
     var jsonString = this.responseText;
     var students = JSON.parse(jsonString);
     populateStudentDropDown(students);
-    houseCount(students);
-    pieChart(students);
+    var houses = houseCount(students);
+    pieChart(houses);
 }
 
 var populateStudentDropDown = function (students) {
@@ -78,14 +78,16 @@ var houseCount = function(student){
         
     }
     })
-console.log(gryffindor);
-console.log(hufflepuff);
-console.log(ravenclaw);
-console.log(slytherin);
-return gryffindor;
-return hufflepuff;
-return ravenclaw;
-return slytherin;
+// console.log(gryffindor);
+// console.log(hufflepuff);
+// console.log(ravenclaw);
+// console.log(slytherin);
+ return {
+      gryffindor: gryffindor,
+      hufflepuff: hufflepuff,
+      ravenclaw: ravenclaw,
+      slytherin: slytherin
+    }
 }
 
 var pieChart = function(houseCount){
@@ -96,31 +98,32 @@ var pieChart = function(houseCount){
             renderTo: container
         },
         title:{
-            text: "Houses of Hogwarts by Students"
+            text: "Number of Students per House",
+            // color: "#FF4136",
         },
         series: [
             {
-                name: "Houses",
+                name: "Students",
                 data: [
                     {
                         name: "Gryffindor",
                         y: houseCount.gryffindor,
-                        color: "red"
+                        color: "#8B0000"
                     },
                     {
                         name: "Hufflepuff",
                         y: houseCount.hufflepuff,
-                        color: "yellow",
+                        color: "#DAA520",
                     }, 
                     {
                         name: "Ravenclaw",
                         y: houseCount.ravenclaw,
-                        color: "blue"
+                        color: "#1003bf"
                     },
                      {
                         name: "Slytherin",
                         y: houseCount.slytherin,
-                        color: "green"
+                        color: "#02720f"
                     },
                 ]
         }]
